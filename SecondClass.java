@@ -1,8 +1,12 @@
 public class SecondClass {
     public static void main(String[] args) {
         // переменные и их значение
-       System.out.println(calculateResult(2, 3, 15, 5));
+        System.out.println(calculateResult(2, 3, 15, 5));
         System.out.println(checkSum(10, 15));
+        System.out.println(checkYear(2000));
+        System.out.println(checkPositive(6));
+        System.out.println(checkNegative(-3));
+        System.out.println(sayHello("Zumrat"));
         boolean b = true;
         byte bt = 0;
         char c = 't';
@@ -19,19 +23,22 @@ public class SecondClass {
         System.out.println("Значение для типа long = " + l);
         System.out.println("Значение для типа float = " + f);
         System.out.println("Значение для типа double = " + d);
+    }
+
           /*Написать метод, который определяет является ли год високосным, и выводит сообщение
     в консоль. Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й
     – високосный.*/
-            int a=2004;
-            if (!(a % 4 == 0) || ((a % 100 == 0) && !(a % 400 == 0))) System.out.println("intercalary year" + a);
-            else System.out.println("non intercalary year" + a);
+            static String checkYear(int a) {
+                if (!(a % 4 == 0) || ((a % 100 == 0) && (a % 400 == 0))) return "intercalary year";
+                else return "non intercalary year";
+            }
                 /*Написать метод, которому в качестве параметра передается целое число, метод должен
 напечатать в консоль положительное ли число передали, или отрицательное; Замечание: ноль
 считаем положительным числом.*/
-            int y = 6;
-            if (y >= 0) System.out.println("number " + y + " positive");
-            else System.out.println("number " + y + " negative");
-        }
+                static String checkPositive(int y){
+                    if (y >= 0) return "number " + y + " positive";
+                    else return "number " + y + " negative";
+                }
 
 
     /* метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,
@@ -57,8 +64,8 @@ public class SecondClass {
 
     /*Написать метод, которому в качестве параметра передается строка, обозначающая имя,
     метод должен вывести в консоль сообщение «Привет, указанное_имя!»*/
-    static void sayHello(String name) {
-        System.out.println("Привет, " + name + "!");
+    static String sayHello(String name) {
+        return "Привет, " + name + "!";
     }
 
 }
