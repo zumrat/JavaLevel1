@@ -19,7 +19,7 @@ public class Java1Lesson2 {
         printArray1(array1);
         findMinMax(array3);
         createArray2(array2);
-        checkBalance(array4);
+        System.out.println(checkBalance(array4));
     }
 
     static void changeArray(int[] arr) {
